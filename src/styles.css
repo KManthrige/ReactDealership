@@ -1,0 +1,10 @@
+
+
+.inv-titles, th {
+    margin: 30px;
+    width: 100px;
+    border: 1px solid black;
+    padding: 8px;
+    border-collapse: separate;
+}
+
