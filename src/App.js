@@ -18,6 +18,7 @@ export default function App() {
       [event.target.name]: event.target.value
     }))
   }
+  // alternative option:
   // const placeholder = (event) => {
   //   setAddNewCar((prevState) => ({
   //     ...prevState,
@@ -31,16 +32,27 @@ export default function App() {
   //   }))
   // }
 
-
+//add object to the inventory array
   const newCar = () => {
     setInventory((prevState) => ([
       ...prevState,
       addNewCar
     ]))
   }
-  // const newCar = () => {
-  //   setInventory([...inventory, addNewCar]);
-  // }
+
+  //clear the inputs
+  const clearInputs = () => {
+    console.log("clear btn")
+    setAddNewCar((prevState) => ({
+      ...prevState,
+      brand: "",
+      model: "",
+      year: "",
+      color: "",
+      fuel: "",
+      cost: "",
+    }));
+  };
 
   useEffect(() => {
     console.log("add new car", addNewCar)
@@ -52,6 +64,10 @@ export default function App() {
 
   return (
     <div>
+      <h1>Car Dealership</h1>
+      <h3>Reconditioned Cars, Unbelievable Prices!</h3>
+      <p>Enter new cars to the inventory using the form below.</p>
+      <br/>
       <div className="insert">
         <input name="brand" className="brand" placeholder="Brand" onChange={placeholder}/>
         <input name="model" className="model" placeholder="Model" onChange={placeholder}></input>
@@ -62,6 +78,7 @@ export default function App() {
 
       </div>
       <button className="btn" onClick={newCar}>Add to Inventory</button>
+      <button className="btn" onClick={clearInputs}>Clear All</button>
       <button className="btn">Remove from Inventory</button>
 
       <table className="inv-titles">
