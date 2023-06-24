@@ -69,12 +69,12 @@ export default function App() {
       <p>Enter new cars to the inventory using the form below.</p>
       <br/>
       <div className="insert">
-        <input name="brand" className="brand" placeholder="Brand" onChange={placeholder}/>
-        <input name="model" className="model" placeholder="Model" onChange={placeholder}></input>
-        <input name="year" className="year" placeholder="Year" onChange={placeholder}></input>
-        <input name="color" className="color" placeholder="Color" onChange={placeholder}></input>
-        <input name="fuel" className="fuel" placeholder="Fuel Type" onChange={placeholder}></input>
-        <input name="cost" className="cost" placeholder="Cost" onChange={placeholder}></input>
+        <input name="brand" className="brand" placeholder="Brand" onChange={placeholder} value={addNewCar.brand}/>
+        <input name="model" className="model" placeholder="Model" onChange={placeholder} value={addNewCar.model}/>
+        <input name="year" className="year" placeholder="Year" onChange={placeholder} value={addNewCar.year}/>
+        <input name="color" className="color" placeholder="Color" onChange={placeholder} value={addNewCar.color}/>
+        <input name="fuel" className="fuel" placeholder="Fuel Type" onChange={placeholder} value={addNewCar.fuel}/>
+        <input name="cost" className="cost" placeholder="Cost" onChange={placeholder} value={addNewCar.cost}/>
 
       </div>
       <button className="btn" onClick={newCar}>Add to Inventory</button>
